@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    width: 300px;
+    background: #f1f1f1;
+    padding: 10px;
+    overflow-y: auto;
+    border-right: 1px solid #ccc;
+    position: relative;
+}
+
+.chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+#messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.msg {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 75%;
+    word-wrap: break-word;
+}
+
+.me {
+    background: #dcf8c6;
+    align-self: flex-end;
+}
+
+.other {
+    background: #eee;
+    align-self: flex-start;
+}
+
+.input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+input,
+button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+#message {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.user {
+    cursor: pointer;
+    padding: 10px;
+    background: #e0e0e0;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.user:hover {
+    background: #ccc;
+}
+
+.plus-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+.back-btn {
+    display: none;
+    margin: 10px;
+    padding: 6px 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        background: #f1f1f1;
+        padding: 10px;
+        overflow-y: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #userList {
+        flex: 1;
+        overflow-y: auto;
+        margin-bottom: 60px;
+        /* leaves space for button */
+    }
+
+
+    .chat {
+        display: none;
+        height: 100%;
+        width: 100%;
+    }
+
+    .chat.active {
+        display: flex;
+    }
+
+    .sidebar.hidden {
+        display: none;
+    }
+
+    .back-btn {
+        display: block;
+    }
+}
